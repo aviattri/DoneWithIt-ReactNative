@@ -15,10 +15,9 @@ export default function App() {
         Hello React Native{" "}
       </Text>
       <Image
-      
         source={{
           width: 200,
-          height: 300,
+          height: 200,
           uri: "https://picsum.photos/200/300",
         }}
       />
