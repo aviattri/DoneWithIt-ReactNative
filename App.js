@@ -8,18 +8,24 @@ import {
   SafeAreaView,
 } from "react-native";
 
+//this hook returns the updated dimensions of the device
+import {
+  useDimensions,
+  useDeviceOrientation,
+} from "@react-native-community/hooks";
+
 //this class by default uses functional components
 // they are lightweight and easy to use
 export default function App() {
-  console.log(Dimensions.get("screen"));
+  const { landscape } = useDeviceOrientation();
   return (
     // <SafeAreaView style={[styles.container]}>
     <SafeAreaView style={styles.container}>
       <View
         style={{
           backgroundColor: "dodgerblue",
-          width: "50%",
-          height: 70,
+          width: "100%",
+          height: landscape ? "100%" : "30%",
         }}
       ></View>
     </SafeAreaView>
