@@ -17,7 +17,7 @@ export default function App() {
       <Image
         source={{
           width: 200,
-          height: 200,
+          height: 300,
           uri: "https://picsum.photos/200/300",
         }}
       />
