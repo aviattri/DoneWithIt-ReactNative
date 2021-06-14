@@ -1,27 +1,28 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Alert, Image, Button } from "react-native";
 
 //this class by default uses functional components
 // they are lightweight and easy to use
 export default function App() {
-  const handlePress = () => console.log("Handle Press");
-
   return (
-    // if we iOS the View component will be mapped to UIView
-    // if we Android the View component will be mapped to AndroidView
     <View style={styles.container}>
-      <Text numberOfLines={1} onPress={handlePress}>
-        Hello React Native{" "}
-      </Text>
-      <Image
-        source={{
-          width: 200,
-          height: 300,
-          uri: "https://picsum.photos/200/300",
-        }}
+      <Button
+        color="orange"
+        title="clicl me"
+        onPress={() =>
+          Alert.alert("My title", "My Message", [
+            {
+              text: "Yes",
+              onPress: () => console.log("Yes"),
+            },
+            {
+              text: "No",
+              onPress: () => console.log("No"),
+            },
+          ])
+        }
       />
-      <StatusBar style="auto" />
     </View>
   );
 }
