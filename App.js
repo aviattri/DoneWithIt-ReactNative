@@ -6,7 +6,7 @@ import { StyleSheet, Text, View, Alert, Image, Button } from "react-native";
 // they are lightweight and easy to use
 export default function App() {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, containerStlye]}>
       <Button
         color="orange"
         title="clicl me"
@@ -22,6 +22,11 @@ export default function App() {
 //   and then called create method
 //   later we are passing an object in the method with proerty called container
 //   container contains all the styles for our container
+
+const containerStlye = {
+  backgroundColor: "orange",
+};
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
