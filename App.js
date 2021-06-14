@@ -11,16 +11,7 @@ export default function App() {
         color="orange"
         title="clicl me"
         onPress={() =>
-          Alert.alert("My title", "My Message", [
-            {
-              text: "Yes",
-              onPress: () => console.log("Yes"),
-            },
-            {
-              text: "No",
-              onPress: () => console.log("No"),
-            },
-          ])
+          Alert.prompt("My Title", "My Message", (text) => console.log(text))
         }
       />
     </View>
