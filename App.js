@@ -1,11 +1,8 @@
 import React from "react";
 import {
   StyleSheet,
-  Text,
+  Dimensions,
   View,
-  Alert,
-  Image,
-  Button,
   Platform,
   StatusBar,
   SafeAreaView,
@@ -14,16 +11,17 @@ import {
 //this class by default uses functional components
 // they are lightweight and easy to use
 export default function App() {
+  console.log(Dimensions.get("screen"));
   return (
     // <SafeAreaView style={[styles.container]}>
     <SafeAreaView style={styles.container}>
-      <Button
-        color="orange"
-        title="click me"
-        onPress={() =>
-          Alert.prompt("My Title", "My Message", (text) => console.log(text))
-        }
-      />
+      <View
+        style={{
+          backgroundColor: "dodgerblue",
+          width: "50%",
+          height: 70,
+        }}
+      ></View>
     </SafeAreaView>
   );
 }
