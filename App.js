@@ -1,20 +1,30 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, Alert, Image, Button } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Alert,
+  Image,
+  Button,
+  Platform,
+  StatusBar,
+  SafeAreaView,
+} from "react-native";
 
 //this class by default uses functional components
 // they are lightweight and easy to use
 export default function App() {
   return (
-    <View style={[styles.container, containerStlye]}>
+    // <SafeAreaView style={[styles.container]}>
+    <SafeAreaView style={styles.container}>
       <Button
         color="orange"
-        title="clicl me"
+        title="click me"
         onPress={() =>
           Alert.prompt("My Title", "My Message", (text) => console.log(text))
         }
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -31,7 +41,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 });
